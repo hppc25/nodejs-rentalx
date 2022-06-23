@@ -1,19 +1,17 @@
-import { CategoriesRepository } from '../repositories/CategoriesRepository';
-
-interface IRequest {
-  name: string;
-  description: string;
-}
+import {
+  ICategoriesRepository,
+  ICreateCategoryDTO,
+} from '../repositories/ICategoriesRepository';
 
 /**
- * [x] - Definir o tipo de retorno
- * [x] - Alterar o retorno do erro
- * [x] - Acessar o repositório
+ * [x] - Set return type
+ * [x] - Change return error
+ * [x] - Access the repository
  */
 class CreateCategoryService {
-  constructor(private categoriesRepository: CategoriesRepository) {}
+  constructor(private categoriesRepository: ICategoriesRepository) {}
 
-  execute({ name, description }: IRequest): void {
+  execute({ name, description }: ICreateCategoryDTO): void {
     const categoryAlreadyExists = this.categoriesRepository.findByName(name);
 
     if (categoryAlreadyExists) {
