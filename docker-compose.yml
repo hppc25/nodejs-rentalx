@@ -22,7 +22,7 @@ services:
     # Define o volume no qual vai guardar os dados
     volumes:
       - pgdata:/data/postgres
-  # Nome do serviço
+    # Nome do serviço
   app: 
     # Vai executar/buildar o comando igual o docker build -t ... usando o Dockerfile
     build: .
@@ -34,7 +34,10 @@ services:
     # Copia os arquvos da raiz . para a o diretório -> /usr/app
     volumes:
       - .:/usr/app
-
+    links: 
+      - database_ignite
+    depends_on:
+      - database_ignite
 
 volumes: 
   pgdata:
