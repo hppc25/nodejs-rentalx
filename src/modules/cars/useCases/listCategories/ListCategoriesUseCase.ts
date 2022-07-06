@@ -7,7 +7,8 @@ class ListCategoriesUseCase {
   execute(): Category[] {
     const categories = this.categoriesRepository.list();
 
-    return categories;
+    // return categories;
+    return [];
   }
 }
 
