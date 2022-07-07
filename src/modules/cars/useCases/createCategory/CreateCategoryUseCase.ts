@@ -1,3 +1,5 @@
+import { inject, injectable } from 'tsyringe';
+
 import {
   ICategoriesRepository,
   ICreateCategoryDTO,
@@ -8,8 +10,15 @@ import {
  * [x] - Change return error
  * [x] - Access the repository
  */
+
+// Defines that the class can be injected
+@injectable()
 class CreateCategoryUseCase {
-  constructor(private categoriesRepository: ICategoriesRepository) {}
+  constructor(
+    // Inject the CategoriesRepository into the prop
+    @inject('CategoriesRepository')
+    private categoriesRepository: ICategoriesRepository,
+  ) {}
 
   async execute({ name, description }: ICreateCategoryDTO): Promise<void> {
     const categoryAlreadyExists = await this.categoriesRepository.findByName(
