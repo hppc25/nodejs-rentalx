@@ -29,7 +29,7 @@ class SESMailProvider {
 
     await this.client.sendMail({
       to,
-      from: 'Rentx <noreplay@rentx.com.br>',
+      from: 'Rentx <noreplay@rentx.com>',
       subject,
       html: templateHTML,
     });
