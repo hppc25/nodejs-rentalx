@@ -3,3 +3,6 @@ node_modules
 tmp
 coverage
 .env
+vscode
+!tmp/.gitkeep
+ormconfig.json
