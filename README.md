@@ -1,101 +1,100 @@
-# Cadastro de carro
-
-**RF**
-Deve ser possível cadastrar um novo carro.
-Deve ser possível listar todas as categorias.
-
-**RN**
-Não deve ser possível cadastrar um carro com uma placa já existente.
-*Não deve ser possível alterar uma placa de um carro.
-O carro deve ser cadastrado, por padrão com disponibilidade.
-O usuário responsável pelo cadastro, deve ser um usuário administrador.
-
-# Listagem de carros
-
-**RF**
-Deve ser possível listar todos os carros disponíveis.
-Deve ser possível listar todos os carros disponíveis pela nome da categoria.
-Deve ser possível listar todos os carros disponíveis pela nome da marca.
-Deve ser possível listar todos os carros disponíveis pela nome do carro.
-
-**RN**
-O usuário não precisa estar logado no sistema.
-
-# Cadastro de Especificação no carro
-
-**RF**
-Deve ser possível cadastrar uma especificação para um carro.
+<h1 align="center">
+  Rentx API
+</h1>
 
 
-**RN**
-Não deve ser possível cadastrar uma especificação para um carro não cadastrado.
-Não deve ser possível cadastrar uma especificação já existente para o mesmo carro.
-O usuário responsável pelo cadastro, deve ser um usuário administrador.
 
-# Cadastro de imagens do carro
-
-**RF**
-Deve ser possível cadastrar a imagem do carro.
-
-**RNF**
-Utilizar o multer para upload dos arquivos.
-
-**RN**
-O usuário deve poder cadastrar mais de uma imagem para o mesmo carro.
-O usuário responsável pelo cadastro, deve ser um usuário administrador.
-
-# Aluguel de carro
-
-**RF**
-Deve ser possível cadastrar um aluguel.
-
-**RN**
-O aluguel deve ter duração mínima de 24 horas.
-Não deve ser possível cadastrar um novo aluguel, caso já exista um aberto para o mesmo usuário.
-Não deve ser possível cadastrar um novo aluguel, caso já exista um aberto para o mesmo carro.
-O usuário deve estar logado na aplicação.
-Ao realizar um aluguel, o status do carro deverá ser alterado para indisponível.
-
-# Devolução carro de carro
-
-**RF**
-Deve ser possível realizar a devolução de um carro.
-
-**RN**
-Se o carro for devolvido com menos de 24 horas, deverá ser cobrado diária completa.
-Ao realizar a devolução, o carro deverá ser liberado para outro aluguel.
-Ao realizar a devolução, o usuário deverá ser liberado para outro aluguel.
-Ao realizar a devolução, deverá ser calculado o total do aluguel.
-Caso o horário de devolução seja superior ao horário previsto de entrega, deverá ser cobrado multa proporcional aos dias de atraso.
-Caso haja multa, deverá ser somado ao total do aluguel.
-O usuário deve estar logado na aplicação.
-
-# Listagem de alugueis para o usuário
-
-**RF**
-Deve ser possível realizar a busca de todos os alugueis para o usuário.
+<p align="center">
+ <a href="#about-the-project">About the project</a> •
+ <a href="#features">Features</a> •
+ <a href="#technologies">Technologies</a> •
+ <a href="#development-setup">Development Setup</a> •
+ <a href="#License">License</a> •
+ <a href="#author">Author</a>
+</p>
 
 
-**RN**
+## About the project
+A Car rental Node.js API built with Express and all the latest tools and best practices in development! In this version I went deeper into the principles of clean architecture, clean code, SOLID and scalability.
 
-O usuário deve estar logado na aplicação.
+## Features
+- Car registration
+- Car image registration
+- Specification registration on the car
+- List cars available
+- List users rental cars
+- Rent cars 
+- Car return
+- Create new user and admin
+- User authentication 
+- Profile Update
+- Recover Password
 
-# Recuperar senha
 
-**RF**
-- Deve ser possível o usuário recuperar a senha informando o e-mail.
-- O usuário deve receber um e-mail com o passo a passo para a recuperação da senha.
-- O usuário deve conseguir inserir uma nova senha.
 
-**RN**
-- O usuário precisa informar uma nova senha.
-- O link enviado para a recuperação deve expirar em 3 horas.
-# Definições
 
-Requisitos são uma parte importante onde um analista conversa com um cliente e através disso, trás os requisitos funcionais e não funicionais, podendo mudar esses de acordo com futuras conversas, tendo assim uma evolução contínua.
 
-**RF** => Requisitos Funcionais (Funcionalidades que aplicação pode ter)
+---
 
-**RNF** => Requisitos Não Funcionais (São requisitos que não estão ligados diretamente com a aplicação Ex: dados devem ser salvos em um banco de dados postgres)
+## Technologies
 
-**RN** => Regra de negócio (Regras por trás de nossos requisitos Ex: não deve ser possível cadastrar uma categoria com nome já existente)
+Technologies used to build the API
+
+- [NodeJs](https://nodejs.org/)
+- [ExpressJs](https://expressjs.com/)
+- [Typescript](https://www.typescriptlang.org/)
+- [Docker](https://www.docker.com/)
+- [Typeorm](https://typeorm.io/)
+- [Postgress](https://www.postgresql.org/)
+- [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
+- [Jest](https://jestjs.io/)
+- [Swagger](https://swagger.io/)
+
+
+
+
+---
+
+## Development Setup
+
+
+### **Clone the project**
+
+```bash
+# Run the command git clone  to clone the repository
+$ git clone https://github.com/hppc25/nodejs-rentalx.git
+#  change to directory
+$ cd nodejs-rentalx
+```
+
+### Requirements
+
+- Docker and Docker Compose
+- NodeJS v14 or later
+
+### Development Setup
+
+DB
+
+```bash
+# copy example environment variable file to use in the project
+$ cp .env.example .env
+
+# copy example environment variable file to use in the project
+$ docker-compose up
+```
+
+---
+
+## License
+
+The MIT License. Checnk [LICENSE](LICENSE) for more information.
+
+---
+
+## Author
+
+By Helder Correia 👋🏽 Get in touch!
+
+[![Linkedin Badge](https://img.shields.io/badge/-Helder-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/helder2pc/)](https://www.linkedin.com/in/helder2pc/)
+[![Gmail Badge](https://img.shields.io/badge/-helder.patrick25@gmail.com-red?style=flat-square&link=mailto:helder.patrick25@gmail.com)](mailto:hppc25@gmail.com)
