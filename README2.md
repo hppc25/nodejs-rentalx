@@ -45,7 +45,7 @@ Technologies used to build the API
 - [Typescript](https://www.typescriptlang.org/)
 - [Docker](https://www.docker.com/)
 - [Typeorm](https://typeorm.io/)
-- [Postgresql](https://www.postgresql.org/)
+- [Postgress](https://www.postgresql.org/)
 - [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
 - [Jest](https://jestjs.io/)
 - [Swagger](https://swagger.io/)
